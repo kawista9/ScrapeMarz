@@ -134,15 +134,14 @@ def scrape():
 
       hemispheres=soup.find_all("div", class_="item")
       for hemisphere in hemispheres:
-      title=hemisphere.find("h3").text.strip()
-      img_url=hemisphere.a["href"]
+            title=hemisphere.find("h3").text.strip()
+            img_url=hemisphere.a["href"]
       
       
             
-      posts={
-            "title": title,
-            "img_url":img_url
-            }
+            posts={"title": title,
+                  "img_url":img_url
+                  }
             
       collection.insert_one(posts)
 
